@@ -1,0 +1,76 @@
+shimmy10
+
+
+=============================
+=      File description     =
+=============================
+SpaceShip.java - represents the abstract SpaceShip object that is used in the SpaceWars game.
+    In charge of elementary actions.
+
+SpaceShipFactory.java - In charge of generating the chosen types of space ships into the game.
+
+Human.java - inherits from SpaceShip and represents the interactive space ship, who's actions are completely controlled
+    by a real life user.
+
+Aggressive.java - inherits from SpaceShip and represents .
+
+Basher.java - inherits from SpaceShip and represents a space ship who's soul purpose is to bash in to the other
+    space ships in the game.
+
+Runner.java - inherits from SpaceShip and represents a space ship who plays it safe, running away from any other
+    space ship near by, so that not to get injured.
+
+Drunkard.java - inherits from SpaceShip and represents a drunk pilot, who has no logical control over his spaceship,
+    and instead moves and acts in a random, unstable and energy-full manner, mimicking a real life drunk.
+
+Special.java - inherits from SpaceShip and represents the smartest player in the game, using a co-existing safe
+    and aggressive strategy, depending on the situation.
+
+
+=============================
+=          Design           =
+=============================
+Extensibility - I designed all the different types of space ships as extended from the abstract class SpaceShip.
+This way any ability/functionality/feature that I might want to add to all space ships, I can easily do so by
+adding to the SpaceShip class only, and all space ships will be updated accordingly.
+
+Modularity - Similar to the explanation of the Extensibility, I designed the SpaceShip class as abstract.
+    As such, given the API of SpaceShip, any new programmer can easily create a new type of a space ship,
+    using the SpaceShip functions without needing to know their detail.
+
+Intuitiveness and understandability - The design of my code is such that each section of the nature of the space
+    ships is separated in to different classes according to their essence. Furthermore, as acknowledged previously, using an abstract class and inheritance,
+    any one can easily understand the essence of each space ship type and its functionality.
+
+Representation of the classes and their relationships - Seeing that I used inheritance in my design it makes
+    my program sensible when reusing code. As keeping to the minimal API concept, I designed each inheritance as
+    completely keeping to their "Father's" API. Meaning, I sure used overriding as needed, but made sure to not add
+    any additional functions to the inheritors.
+
+
+=============================
+=  Implementation details   =
+=============================
+1. The Drunkard: was implemented to impersonate the behavior of a real life drunk.
+    As such, his movements are randomly being changed from left to right as to mimic the unstable manner of a drunk.
+    Furthermore, he continues to accelerate constantly, "full of energy and excitement", yet once he reaches his
+    maximum energy level, he climaxes and explodes into random action, weather being firing a shot or teleporting.
+
+2. The special: was implemented as the smartest, most strategic player in the game. He combines the opposite strategies
+    of the Runner and the Aggressive, promising himself safety yet remembering that "the best defence is a good,
+    strong offence".
+    As such, when he nears a space ship who has his shield up he will run away in the opposite direction/teleport.
+    If the closest space ship has his shield down then he will attempt to fire at him. Especially in order to beat
+    an Aggressive he will always attack one instant before him.
+
+
+3. The doAction function: In the "father" SpaceShip class I implemented all elementary actions that any space ship
+    must do each round, disregarding it's type. This way if any new SpaceShip object will be created, but won't be
+    given any special attributes, it will still work and can be part of the game.
+
+
+=============================
+=    Answers to questions   =
+=============================
+
+None.
